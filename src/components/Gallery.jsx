@@ -3,7 +3,6 @@ import React from "react";
 import img1 from "../assets/gallery/Img1.png";
 import img2 from "../assets/gallery/Img2.png";
 import img3 from "../assets/gallery/Img3.png";
-import img4 from "../assets/gallery/Img4.png";
 import img5 from "../assets/gallery/Img5.png";
 import img6 from "../assets/gallery/Img6.png";
 
