@@ -28,7 +28,7 @@ const Intro = () => {
       <div className="bottomOverlay">
 
         <div className="introText">
-          <h1>Dwei & Kelut</h1>
+          <h1>Anju & Vikas</h1>
           <p>Together With Their Families</p>
         </div>
 
