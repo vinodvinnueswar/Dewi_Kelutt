@@ -4,9 +4,7 @@ import OurStory from '../components/OurStory'
 import Location from '../components/Location'
 import Gallery from '../components/Gallery'
 import RSVP from '../components/Rspv'
-
-
-
+import Events from '../components/Event'
 
 
 const Home = () => {
@@ -16,6 +14,7 @@ const Home = () => {
         <OurStory/>
         <Location/>
         <Gallery/>
+        <Events/>
         <RSVP/>
     </div>
   )

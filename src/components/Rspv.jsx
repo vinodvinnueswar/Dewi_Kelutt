@@ -9,6 +9,9 @@ const RSVP = () => {
     message: ""
   });
 
+  const [loading, setLoading] = useState(false);
+  const [success, setSuccess] = useState(false);
+
   const sectionRef = useRef(null);
 
   useEffect(() => {
@@ -34,13 +37,25 @@ const RSVP = () => {
   };
 
   const sendWhatsApp = () => {
+
+    if (!form.name.trim()) {
+      alert("Please enter your name");
+      return;
+    }
+
+    setLoading(true);
+
     const text = `RSVP Details:%0A
 Name: ${form.name}%0A
 Guests: ${form.guests}%0A
 Attending: ${form.attending}%0A
 Message: ${form.message}`;
 
-    window.open(`https://wa.me/917680812372?text=${text}`, "_blank");
+    setTimeout(() => {
+      window.open(`https://wa.me/917680812372?text=${text}`, "_blank");
+      setLoading(false);
+      setSuccess(true);
+    }, 1200);
   };
 
   return (
@@ -75,8 +90,12 @@ Message: ${form.message}`;
           onChange={handleChange}
         ></textarea>
 
-        <button onClick={sendWhatsApp}>
-          Send RSVP
+        <button
+          className={`rsvpBtn ${success ? "success" : ""}`}
+          onClick={sendWhatsApp}
+          disabled={loading}
+        >
+          {loading ? "Sending..." : success ? "Sent ✓" : "Send RSVP"}
         </button>
 
       </div>
